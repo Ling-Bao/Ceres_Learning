@@ -5,6 +5,7 @@
 #include "photogrammetry.hpp"
 #include "example_one.h"
 #include "powell_quartic.h"
+#include "bundle_adjustment.h"
 
 using namespace std;
 
@@ -79,6 +80,7 @@ void TestCSV() {
  * 3 Photogrammetry
  */
 void SolveProblem3() {
+    PrintHit("------------Problem (3)------------", "Photogrammetry", 1);
     string filename = "/home/bl/MyWorkspace/OpenSource/Ceres_Learning/support/data/photogrammetry.csv";
     double focal = 153.24;
     double ratio = 1. / 40000;
@@ -139,13 +141,25 @@ void SolveProblem5() {
     PrintHit("Optimization value = ", res, 1);
 }
 
+/**
+ * 6 Bundle Adjustment Problem
+ */
+void SolveProblem6() {
+    PrintHit("------------Problem (6)------------", "Bundle Adjustment Problem", 1);
+
+    PrintHit("Bundle Adjustment Problem for reading Ladybug Data set -- problem-49-7776-pre.txt.bz2", "", 1);
+    string filename = "/home/bl/MyWorkspace/OpenSource/Ceres_Learning/support/data/problem-49-7776-pre.txt";
+    SolveBA(filename.c_str());
+}
+
 int main() {
-//    SolveProblem1();
-//    SolveProblem2();
-//    TestCSV();
-//    SolveProblem3();
-//    SolveProblem4();
+    SolveProblem1();
+    SolveProblem2();
+    TestCSV();
+    SolveProblem3();
+    SolveProblem4();
     SolveProblem5();
+    SolveProblem6();
 
     return 0;
 }

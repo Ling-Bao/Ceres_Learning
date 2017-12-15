@@ -1,10 +1,34 @@
 # Ceres Learning
 
+[githut](https://github.com/Ling-Bao/Ceres_Learning)
+
+## 0 参考资料
+
+（1）[Ceres Solver](http://www.ceres-solver.org/index.html)
+
+（2）[Ceres-Solver学习笔记(1)](http://blog.csdn.net/huajun998/article/details/76136710)
+
+（3）[Ceres-Solver学习笔记(2)](http://blog.csdn.net/huajun998/article/details/76145441)
+
+（4）[Ceres-Solver学习笔记(3)](http://blog.csdn.net/huajun998/article/details/76165511)
+
+（5）[Ceres-Solver学习笔记(4)](http://blog.csdn.net/huajun998/article/details/76166307)
+
+（6）[Ceres-Solver学习笔记(5)](http://blog.csdn.net/huajun998/article/details/76177592)
+
+（7）[Ceres-Solver学习笔记(6)](http://blog.csdn.net/huajun998/article/details/76222745)
+
+（8）[Ceres-Solver学习笔记(7)](http://blog.csdn.net/huajun998/article/details/76271938)
+
+（9）[Ceres-Solver学习笔记(8)](http://blog.csdn.net/huajun998/article/details/76341292)
+
+（10）[Ceres-Solver学习笔记(9)](http://blog.csdn.net/huajun998/article/details/76423003)
+
 ## 1 练练手
 
 ### 1.1 非约束最优化问题
 
-$${\arg \min}_{x} f(x)=\frac{1}{2}(10-x)^{2}  \tag{1}$$
+$${\arg \min}_{x} f(x)=\frac{1}{2}(10-x)^{2}\tag{1}$$
 
 **步骤**
 
@@ -15,7 +39,8 @@ $${\arg \min}_{x} f(x)=\frac{1}{2}(10-x)^{2}  \tag{1}$$
 ### 1.2 曲线拟合
 
 **（1）魏尔斯特拉斯函数(Weierstrass function)**
-$$f(x)=\sum_{n=0}^{N}a^{n}cos(b^{n} \pi x) \tag{2}$$
+
+$$f(x)=\sum_{n=0}^{N}a^{n}cos(b^{n} \pi x)\tag{2}$$
 
 ​	其中$0<a<1$，$b$为正奇数，且满足$ab>1+\frac{3}{2} \pi$
 
@@ -45,11 +70,11 @@ $$f(x)=\sum_{n=0}^{N}a^{n}cos(b^{n} \pi x) \tag{2}$$
 
 **（1）共线方程**
 
-$$\begin{equation} \begin{split} \left\{ \begin{array}{} x-x_{0}=- f\frac{a_{1}(X-X_{s})+b_{1}(Y-Y_{s})+c_{1}(Z-Z_{s})}{a_{3}(X-X_{s})+b_{3}(Y-Y_{s})+c_{3}(Z-Z_{s})}, & \\ y-y_{0}=-f \frac{a_{2}(X-X_{s})+b_{2}(Y-Y_{s})+c_{2}(Z-Z_{s})}{a_{3}(X-X_{s})+b_{3}(Y-Y_{s})+c_{3}(Z-Z_{s})} \end{array}  \right. \end{split} \tag{3} \end{equation}$$
+$$\begin{equation} \begin{split} \left\{ \begin{array}{} x-x_{0}=- f\frac{a_{1}(X-X_{s})+b_{1}(Y-Y_{s})+c_{1}(Z-Z_{s})}{a_{3}(X-X_{s})+b_{3}(Y-Y_{s})+c_{3}(Z-Z_{s})}, & \\ y-y_{0}=-f \frac{a_{2}(X-X_{s})+b_{2}(Y-Y_{s})+c_{2}(Z-Z_{s})}{a_{3}(X-X_{s})+b_{3}(Y-Y_{s})+c_{3}(Z-Z_{s})} \end{array}  \right. \end{split}\tag{3} \end{equation}$$
 
 ​	其中$x_{0}, y_{0}, f$已知，$abc$为旋转矩阵，可以利用$\phi, \omega, \kappa$表示如下：
 
-$$\begin{equation} \begin{split} \left\{ \begin{array}{} a_{1}=cos\phi cos\kappa -sin\phi sin\omega sin\kappa, & \\ a_{2}=-cos\phi sin\kappa -sin\phi sin\omega cos\kappa, & \\ a_{3}=-sin\phi cos\omega, & \\ b_{1}=cos\omega sin\kappa, & \\ b_{2}=cos\omega cos\kappa, & \\ b_{3}=-sin\omega, & \\ c_{1}=sin\phi cos\kappa +cos\phi sin\omega sin\kappa, & \\c_{2}=-sin\phi sin\kappa +cos\phi sin\omega cos\kappa, & \\ c_{3}=cos\phi cos\omega \end{array}  \right. \end{split} \tag{4} \end{equation}$$
+$$\begin{equation} \begin{split} \left\{ \begin{array}{} a_{1}=cos\phi cos\kappa -sin\phi sin\omega sin\kappa, & \\ a_{2}=-cos\phi sin\kappa -sin\phi sin\omega cos\kappa, & \\ a_{3}=-sin\phi cos\omega, & \\ b_{1}=cos\omega sin\kappa, & \\ b_{2}=cos\omega cos\kappa, & \\ b_{3}=-sin\omega, & \\ c_{1}=sin\phi cos\kappa +cos\phi sin\omega sin\kappa, & \\c_{2}=-sin\phi sin\kappa +cos\phi sin\omega cos\kappa, & \\ c_{3}=cos\phi cos\omega \end{array}  \right. \end{split}\tag{4} \end{equation}$$
 
 **（2）步骤**
 
@@ -67,7 +92,7 @@ $$\begin{equation} \begin{split} \left\{ \begin{array}{} a_{1}=cos\phi cos\kappa
 
 **（1）数学表达式**
 
-$$f(X)=\left(x_1+10x_2\right)^2+5\left(x_3-x_4\right)^2+\left(x_2-2x_3\right)^4+10\left(x_1-x_4\right)^4 \tag{5}$$
+$$f(X)=\left(x_1+10x_2\right)^2+5\left(x_3-x_4\right)^2+\left(x_2-2x_3\right)^4+10\left(x_1-x_4\right)^4\tag{5}$$
 
 ​	其中：
 
@@ -79,9 +104,45 @@ $$f(X)=\left(x_1+10x_2\right)^2+5\left(x_3-x_4\right)^2+\left(x_2-2x_3\right)^4+
 
 **（2）Powell's Quartic Function分解**
 
-$$\begin{equation} \begin{split} f_{1}(x)&=x_{1}+10x_{2} \\ f_{2}(x)&=\sqrt{5}(x_{3}-x_{4})  \\ f_{3}(x)&=(x_{2}-2x_{3})^{2}  \\ f_{4}(x)&=\sqrt{10}(x_{1}-x_{4})^{2}  \\ F(x)&=[f_{1}(x), f_{2}(x), f_{3}(x), f_{4}(x)] \end{split} \end{equation} \tag{6}$$
+$$\begin{equation} \begin{split} f_{1}(x)&=x_{1}+10x_{2} \\ f_{2}(x)&=\sqrt{5}(x_{3}-x_{4})  \\ f_{3}(x)&=(x_{2}-2x_{3})^{2}  \\ f_{4}(x)&=\sqrt{10}(x_{1}-x_{4})^{2}  \\ F(x)&=[f_{1}(x), f_{2}(x), f_{3}(x), f_{4}(x)] \end{split} \end{equation}\tag{6}$$
 
 **（3）最优化问题数学描述**
 
-$${\arg \min}_{x} \frac{1}{2} \|F(x)\|^{2} \tag{7}$$
+$${\arg \min}_{x} \frac{1}{2} \|F(x)\|^{2}\tag{7}$$
+
+**（4）步骤**
+
+​	（4.1）编写CostFunction结构体。
+
+​	（4.2）构造一个求解非线性最小二乘法的Problem来进行未知数求解。
+
+**（5）运行结果**
+
+![Powell](support/picture/Powell.png)
+
+### 1.5 Bundle Adjustment
+
+**（1）BA数据集**
+
+​	[Bundle Adjustment in the Large](http://grail.cs.washington.edu/projects/bal/)
+
+​	备注：此处使用**Ladybug Dataset：**[problem-49-7776-pre.txt.bz2](http://grail.cs.washington.edu/projects/bal/data/ladybug/problem-49-7776-pre.txt.bz2)
+
+**（2）BA问题**
+
+​	[ceres solver学习之bundle adjustment](http://blog.sciencenet.cn/blog-3276147-1030202.html)
+
+![Bundle Adjustment Projection Error](support/picture/BA_ProjectionError.png)
+
+**（3）步骤**
+
+​	（3.1）读取**problem-49-7776-pre.txt.bz2**数据。
+
+​	（3.2）编写CostFunction结构体。
+
+​	（3.3）构造一个求解非线性最小二乘法的Problem来进行未知数求解。
+
+**（4）运行结果**
+
+![Simple Bundle Adjustment Solve Result](support/picture/BA_SolveResult.png)
 
